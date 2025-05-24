@@ -20,10 +20,17 @@ An animated logo reveal effect using GSAP and SVG. The animation shows text morp
 
 ## Live Demo
 
-[View Live Demo](https://your-username.github.io/vin-logo-animation/)
+[View Live Demo](https://satya1844.github.io/vin-logo-animation/)
 
 ## Setup
 
-1. Clone the repository
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/satya1844/vin-logo-animation.git
+   ```
 2. Open index.html in a modern web browser
 3. No build process required - it's pure HTML, CSS, and JavaScript
+
+## Repository
+
+View the source code on [GitHub](https://github.com/satya1844/vin-logo-animation)
