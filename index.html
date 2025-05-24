@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Animation</title>
+    <!-- Load GSAP and Google Fonts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            background: black;
+            overflow: hidden;
+            color: white;
+        }
+
+        /* Update container styles */
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* Update text container styles */
+        .text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 35px;
+            width: 90%;
+            text-align: center;
+            letter-spacing: 1px;  /* Increased for better spacing */
+        }
+
+        /* Update letter styles */
+        .letter {
+            position: relative;  /* Changed from absolute */
+            display: inline-block;
+            opacity: 0;
+            transform-origin: center;
+            margin: 0 5px;  /* Added horizontal spacing */
+        }
+
+        /* Update logo styles */
+        #vinay-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 543px;
+            height: 516px;
+        }
+
+        .main-v {
+            fill: #F01616;
+            transform-origin: center center;
+        }
+
+        .details path,
+        .bottom path {
+            fill: white;
+            transform-origin: center center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-container">
+            <!-- Text letters -->
+            <span class="letter" data-x="200" data-y="-100">V</span>
+            <span class="letter" data-x="100" data-y="100">i</span>
+            <span class="letter" data-x="-150" data-y="-50">n</span>
+            <span class="letter" data-x="-100" data-y="150">a</span>
+            <span class="letter" data-x="150" data-y="50">y</span>
+            <span class="letter" data-x="50" data-y="-150">D</span>
+            <span class="letter" data-x="-200" data-y="0">a</span>
+            <span class="letter" data-x="120" data-y="-80">m</span>
+            <span class="letter" data-x="-80" data-y="120">a</span>
+            <span class="letter" data-x="180" data-y="-30">r</span>
+            <span class="letter" data-x="-130" data-y="-120">s</span>
+            <span class="letter" data-x="90" data-y="90">i</span>
+            <span class="letter" data-x="-170" data-y="60">n</span>
+            <span class="letter" data-x="140" data-y="-60">g</span>
+        </div>
+        
+        <svg id="vinay-logo" width="275" height="216" viewBox="0 0 275 216" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <!-- Main red V (keep existing path) -->
+                <path class="main-v" d="M48.7207 34.4048V41.5397L95.2028 82.2962L141.573 123.053L142.019 132.631L142.354 142.209L175.571 171.237L208.677 200.265L218.152 200.363C223.391 200.461 234.984 200.461 244.012 200.461L260.398 200.363V127.646V55.0275L244.57 41.1487L228.741 27.3677H218.486H208.12L207.897 76.432L207.562 125.594L172.784 95.2953L137.895 64.9967V57.1777V49.3587L125.299 38.3143L112.815 27.3677H80.712H48.7207V34.4048Z" fill="#F01616"/>
+                
+                <!-- White details -->
+                <g class="details">
+                    <!-- Keep existing white details -->
+                    <path d="M53.7867 66.6636L48.4862 44.9994L139.028 125.149L130.255 134.482L53.7867 66.6636Z" fill="white"/>
+                    <path d="M139.537 129.785L139.49 134.063L139.419 140.387L132.728 135.646L136.044 132.042L137.799 130.183L138.851 129.067L139.537 129.785Z" fill="white"/>
+                    
+                    <!-- Add D-shaped white elements -->
+                    <path d="M57.5476 154.473C57.3357 154.554 57.1768 158.715 57.1768 163.714L57.2297 172.793L68.9907 178.818L80.8047 184.843L84.0893 184.87L87.3739 184.897V186.465V188.059H82.7119H78.0499L75.9838 186.978L73.8647 185.897L65.6532 185.951L57.4416 186.032L57.3887 189.68C57.3887 191.679 57.4946 193.544 57.6006 193.814C57.7595 194.084 60.6733 195.759 64.1698 197.543L70.4741 200.785L89.8639 200.758C100.565 200.758 109.36 200.704 109.466 200.677C109.677 200.542 109.73 198.002 109.677 186.573L109.625 175.765L88.5924 165.011L67.5604 154.284H62.7394C60.0375 154.284 57.7065 154.365 57.5476 154.473Z" fill="white"/>
+                    <path d="M88.8609 156.368C88.702 159.529 88.808 159.746 91.3509 161.015L93.6819 162.204L100.41 162.15L107.138 162.096L116.886 167.041L126.581 171.986V175.498V179.038L128.435 179.956L130.289 180.875L130.236 183.226L130.183 185.577L123.349 189.035L116.515 192.521V196.628V200.762H124.621H132.673L143.428 195.277L148.462 190.104V179.038V170.267L139.666 161.907L125.256 154.558H107.085H88.9669L88.8609 156.368Z" fill="white"/>
+                    
+                    <!-- Keep existing small white elements -->
+                    <path d="M180.475 31.4707C179.695 32.1549 179.138 35.2825 179.138 38.7033C179.138 46.5223 180.587 47.8906 188.724 47.8906C198.199 47.8906 199.202 47.1087 199.202 39.2897C199.202 35.3802 198.645 32.1549 197.864 31.4707C197.084 30.7866 193.406 30.2979 189.17 30.2979C184.934 30.2979 181.256 30.7866 180.475 31.4707Z" fill="white"/>
+                    <path d="M196.861 33.0345C198.087 34.9893 197.373 35.7901 196.593 40.7747L197.852 45.7674L189.727 45.9359C190.173 46.62 185.268 45.9359 189.727 45.9359C188.278 43.8834 196.18 46.6471 197.852 45.7674C198.632 45.2787 194.62 39.1213 197.852 39.1213C202.422 39.1213 195.969 31.6662 196.861 33.0345Z" fill="white"/>
+                    <path d="M156.845 34.2093C156.845 35.4799 157.625 36.1641 159.074 36.1641C160.523 36.1641 161.303 35.4799 161.303 34.2093C161.303 32.9387 160.523 32.2546 159.074 32.2546C157.625 32.2546 156.845 32.9387 156.845 34.2093Z" fill="white"/>
+                    <path d="M165.428 32.9387C163.644 34.4048 164.759 36.1641 167.434 36.1641C169.44 36.1641 170.221 35.6754 170.221 34.2093C170.221 32.2546 167.1 31.4727 165.428 32.9387Z" fill="white"/>
+                    <path d="M156.845 42.0296C156.845 43.3979 157.625 43.9844 159.52 43.9844C161.638 43.9844 162.084 43.5934 161.638 42.0296C161.303 40.9545 160.077 40.0749 158.963 40.0749C157.625 40.0749 156.845 40.759 156.845 42.0296Z" fill="white"/>
+                    <path d="M164.647 42.0296C164.647 43.4957 165.428 43.9844 167.434 43.9844C169.441 43.9844 170.221 43.4957 170.221 42.0296C170.221 40.5636 169.441 40.0749 167.434 40.0749C165.428 40.0749 164.647 40.5636 164.647 42.0296Z" fill="white"/>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const letters = document.querySelectorAll('.letter');
+            const logo = document.getElementById('vinay-logo');
+            const mainV = document.querySelector('.main-v');
+            const details = document.querySelector('.details');
+            const bottom = document.querySelector('.bottom');
+            
+            // Modified initial states
+            gsap.set(logo, {
+                opacity: 1,  // Make logo container visible
+                scale: 0.3,
+                transformOrigin: 'center center'
+            });
+            
+            gsap.set([mainV, details, bottom], { 
+                opacity: 0,
+                scale: 0,
+                transformOrigin: 'center center'
+            });
+
+            // Create timeline
+            const tl = gsap.timeline();
+
+            // Animate letters from random positions to form the text
+            tl.to(letters, {
+                opacity: 1,
+                x: (i, target) => {
+                    const letterWidth = 35;
+                    const totalWidth = letterWidth * letters.length;
+                    return ((i - letters.length/2) * letterWidth) + letterWidth/2;
+                },
+                y: 0,
+                duration: 1.2,
+                stagger: {
+                    each: 0.1,
+                    from: "random"
+                },
+                ease: "back.out(1.7)"
+            })
+
+            // Hold the text formation for a moment
+            .to({}, { duration: 0.5 })
+
+            // Find and store V and D positions
+            .add(() => {
+                const vLetter = Array.from(letters).find(l => l.textContent === 'V');
+                const dLetter = Array.from(letters).find(l => l.textContent === 'D');
+                const vPos = vLetter.getBoundingClientRect();
+                const dPos = dLetter.getBoundingClientRect();
+
+                // Position logo parts at letter positions
+                gsap.set(mainV, {
+                    x: vPos.left - window.innerWidth/2,
+                    y: vPos.top - window.innerHeight/2,
+                    scale: 0.3
+                });
+                
+                gsap.set(details, {
+                    x: dPos.left - window.innerWidth/2,
+                    y: dPos.top - window.innerHeight/2,
+                    scale: 0.3
+                });
+            })
+
+            // Fade out V and D letters, show logo parts
+            .to(['V', 'D'].map(letter => 
+                Array.from(letters).find(l => l.textContent === letter)), {
+                opacity: 0,
+                duration: 0.3
+            })
+            .to([mainV, details], {
+                opacity: 1,
+                scale: 0.3,
+                duration: 0.5,
+                ease: "power2.out"
+            })
+
+            // Fade out remaining letters
+            .to(Array.from(letters).filter(l => !['V', 'D'].includes(l.textContent)), {
+                opacity: 0,
+                scale: 0,
+                duration: 0.5,
+                stagger: {
+                    each: 0.03,
+                    from: "edges"
+                },
+                ease: "back.in(1.7)"
+            })
+
+            // Bring logo parts together
+            .to([mainV, details], {
+                x: 0,
+                y: 0,
+                scale: 1,
+                duration: 1,
+                ease: "power3.inOut"
+            })
+
+            // Show bottom parts
+            .to(bottom, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.5,
+                ease: "back.out(1.7)"
+            });
+        });
+    </script>
+</body>
+</html>
